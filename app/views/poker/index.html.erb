@@ -17,35 +17,27 @@ for index in ranks
 end
 
 shuffled_deck=cards.shuffle 
-hand = shuffled_deck[0,5]
+
 %>
 
 
-<p>
-  <img src="/images/cards/<%=hand[0]%>.svg" alt="">
-  <img src="/images/cards/<%=hand[1]%>.svg" alt="">
-  <img src="/images/cards/<%=hand[2]%>.svg" alt="">
-  <img src="/images/cards/<%=hand[3]%>.svg" alt="">
-  <img src="/images/cards/<%=hand[4]%>.svg" alt="">
-  
 
-</p>
 
 <%num_cards = 5 %>
 <%hand2 = shuffled_deck[0,num_cards]%>
 
-<ul>
+<p>
+
 <%index = hand2.count %>
 <%count = 0%>
   <% for index in hand2 %>
-  
-  <li><%= hand2[count] %></li>
+  <img src="/images/cards/<%=hand2[count]%>.svg" alt="">
   <%count = count +1 %>
   <%end %>
 
-</ul>
+</p>
 
 <p>
-<a href="/poker">New Deck!</a>
+<a href="/poker">Deal Another Hand!</a>
 
 </p>
