@@ -6,6 +6,7 @@ suits = ["clubs", "diamonds", "hearts", "spades"]
 
 cards = []
 
+
 for index in ranks
     for index2 in suits
         card = "#{index}_of_#{index2}"
@@ -14,21 +15,37 @@ for index in ranks
     end
 
 end
+
+shuffled_deck=cards.shuffle 
+hand = shuffled_deck[0,5]
 %>
 
+
 <p>
-  <img src="/images/cards/<%=cards[rand(0..51)]%>.svg" alt="">
-  <img src="/images/cards/<%=cards[rand(0..51)]%>.svg" alt="">
-  <img src="/images/cards/<%=cards[rand(0..51)]%>.svg" alt="">
-  <img src="/images/cards/<%=cards[rand(0..51)]%>.svg" alt="">
-  <img src="/images/cards/<%=cards[rand(0..51)]%>.svg" alt="">
+  <img src="/images/cards/<%=hand[0]%>.svg" alt="">
+  <img src="/images/cards/<%=hand[1]%>.svg" alt="">
+  <img src="/images/cards/<%=hand[2]%>.svg" alt="">
+  <img src="/images/cards/<%=hand[3]%>.svg" alt="">
+  <img src="/images/cards/<%=hand[4]%>.svg" alt="">
   
 
 </p>
 
+<%num_cards = 5 %>
+<%hand2 = shuffled_deck[0,num_cards]%>
 
+<ul>
+<%index = hand2.count %>
+<%count = 0%>
+  <% for index in hand2 %>
+  
+  <li><%= hand2[count] %></li>
+  <%count = count +1 %>
+  <%end %>
+
+</ul>
 
 <p>
-<a href="/poker">New Hand!</a>
+<a href="/poker">New Deck!</a>
 
 </p>
